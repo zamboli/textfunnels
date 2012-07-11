@@ -1,0 +1,48 @@
+//
+// NAME: piston.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/11/2012
+// DESCRIPTION:Calculates the work done by pistons over a given distance
+//      1. Input number of pistons, force of one piston(in N), distance travelled(in cm)
+//      2. conver cm to m
+//      3. calculate Work(J) = Force(N)*distance(m)
+//      4. Output Work
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    // define inputs 
+    double pistons, force,totalForce,meters,centimeters, work; 
+
+    // input inputs
+    cout << endl << "Number of pistons:           ";
+    cin >> pistons;
+    cout << "Force of single piston (N):  ";
+    cin >> force;
+    cout << "Distance travelled (cm):     ";
+    cin >> centimeters;
+
+    //convert distance into m
+    meters = centimeters*(1./100.);
+    
+    //calulate total Force
+    totalForce = force*pistons;
+
+    //calculate work
+    work = totalForce * meters;
+    
+    //output
+    cout << endl << "Pistons performed " << work << " joules of work.\n\n";
+
+    return 0;
+}
+
+OUTPUT:
+
+Number of pistons:           6
+Force of single piston (N):  1500
+Distance travelled (cm):     20
+
+Pistons performed 1800 joules of work.
+
