@@ -33,7 +33,7 @@ int main()
     work = totalForce * meters;
     
     //output
-    cout << endl << "Pistons performed " << work << " joules of work.\n\n";
+    cout << endl << "Pistons performed " << work << " joules of work over " << meters << " meters.\n\n";
 
     return 0;
 }
@@ -44,5 +44,6 @@ Number of pistons:           6
 Force of single piston (N):  1500
 Distance travelled (cm):     20
 
-Pistons performed 1800 joules of work.
+Pistons performed 1800 joules of work over 0.2 meters.
+
 

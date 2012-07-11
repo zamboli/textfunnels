@@ -33,7 +33,7 @@ int main()
     work = totalForce * meters;
     
     //output
-    cout << endl << "Pistons performed " << work << " joules of work.\n\n";
+    cout << endl << "Pistons performed " << work << " joules of work over " << meters << " meters.\n\n";
 
     return 0;
 }
