@@ -16,7 +16,7 @@ int main()
     double pistons, force,totalForce,meters,centimeters, work; 
 
     // input inputs
-    cout << "Number of pistons:           ";
+    cout << endl << "Number of pistons:           ";
     cin >> pistons;
     cout << "Force of single piston (N):  ";
     cin >> force;
@@ -24,15 +24,16 @@ int main()
     cin >> centimeters;
 
     //convert distance into m
-    meters = centimeters*(1/100);
+    meters = centimeters*(1./100.);
     
     //calulate total Force
     totalForce = force*pistons;
 
     //calculate work
     work = totalForce * meters;
-    cout << "pistons"<<pistons<<"\ndistance"<<meters<<"\nforce"<<totalForce;
+    
     //output
     cout << endl << "Pistons performed " << work << " joules of work.\n\n";
+
     return 0;
 }
