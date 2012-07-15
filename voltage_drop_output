@@ -1,0 +1,79 @@
+//
+// NAME: voltage_drop.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/15/2012
+// DESCRIPTION: Calculates voltage drop and output power using
+// given values for initial voltage and resistors 1 and 2.
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    //initialize variables
+    double E,V2,P2,R1,R2,I;
+    
+    //header
+    cout << endl << "Voltage Drop Calculator" << endl;
+    
+    //Get Values
+    cout << "\nInitial circuit voltage: ";
+    cin >> E;
+    cout << "R1 Ohms: "; cin >> R1;
+    cout << "R2 Ohms: "; cin >> R2;
+
+    //calculate current, I
+    I = E / ( R1 + R2);
+    
+    //calculate voltage drop across R2
+    V2 = I * R2;
+    
+    //calculate power delivered to R1, P2 
+    P2 = V2 * I;
+    
+    //format output
+    cout << setiosflags(ios::fixed | ios::left) << setprecision(3);
+
+    //print table headers
+    cout << setw(15) << "\nE (Volts)" 
+    << setw(15) << "R1(Ohms)" 
+    << setw(15) << "R2(Ohms)" 
+    << setw(15) << "Voltage Drop" 
+    << setw(15) << "Power Delivered" << endl;
+    cout << setw(15) << ""
+         << setw(15) << ""
+         << setw(15) << ""
+         << setw(15) << "(Volts)"
+         << setw(15) << "(Watts)" << endl;
+
+    //print first line of data
+    cout << setw(15) << E
+         << setw(15) << R1
+         << setw(15) << R2
+         << setw(15) << V2
+         << setw(15) << P2 << endl;
+    return 0;
+}
+
+OUTPUT:
+
+Voltage Drop Calculator
+
+Initial circuit voltage: 10
+R1 Ohms: 100
+R2 Ohms: 200
+
+E (Volts)     R1(Ohms)       R2(Ohms)       Voltage Drop   Power Delivered
+                                             (Volts)        (Watts)        
+10.000         100.000        200.000        6.667          0.222          
+
+
+CHART:
+10.000         100.000        100.000        5.000          0.250          
+10.000         100.000        200.000        6.667          0.222          
+10.000         200.000        200.000        5.000          0.125          
+20.000         100.000        100.000        10.000         1.000          
+20.000         100.000        200.000        13.333         0.889          
+20.000         200.000        200.000        10.000         0.500          

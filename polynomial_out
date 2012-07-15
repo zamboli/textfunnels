@@ -1,0 +1,61 @@
+//
+// NAME: polynomial.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/15/2012
+// DESCRIPTION: compute value of second order polynomial
+// ax^2 + bx + c for given a, b, c, x
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    //title
+    cout << endl << "Compute the value of the second-order polynomial ax^2 + bx + c" << endl;
+
+    //initialize variables
+    double a,b,c,x;
+    
+    //cout << setiosflags(ios::fixed);
+    //input variables
+    cout << "\nEnter the coefficient of the x-squared term: "; cin >> a;
+    cout << "Enter the coefficient of the x term: "; cin >> b;
+    cout << "Enter the value for the constant term: "; cin >> c;
+    cout << "Enter the value for X: "; cin >> x;
+
+    //calculate and output polynomial value
+    cout << "\nPolynomial value of (" << a << " * "<< x << " ^ 2) + ("
+         << b << " * " << x << ") + " << c << " is: " 
+         << (a * (x*x)) + (b * x) + c << endl << endl;
+
+
+
+
+    return 0;
+}
+
+OUTPUT:
+
+Compute the value of the second-order polynomial ax^2 + bx + c
+
+Enter the coefficient of the x-squared term: 2
+Enter the coefficient of the x term: 17
+Enter the value for the constant term: -12
+Enter the value for X: 1.3
+
+Polynomial value of (2 * 1.3 ^ 2) + (17 * 1.3) + -12 is: 13.48
+
+CHART:
+
+a       b       c       x       polynomial value
+2.0     17.0    -12.0   1.3     13.48
+3.2     2.0     15.0    2.5     40
+3.2     2.0     15.0    -2.5    30
+-2.0    10.0    0.0     2.0     12
+-2.0    10.0    0.0     4.0     8
+-2.0    10.0    0.0     5.0     0
+-2.0    10.0    0.0     6.0     -12
+5.0     22.0    18.0    8.3     545.05
+4.2     -16     -20     -5.2    176.768
