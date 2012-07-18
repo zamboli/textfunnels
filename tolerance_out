@@ -2,7 +2,7 @@
 // NAME: tolerance.cc
 // AUTHOR: Ben Lazan
 // DATE: 07/18/2012
-// DESCRIPTION: 
+// DESCRIPTION: determines specification status considering component tolerance
 //
 #include<iostream>
 #include<iomanip>
