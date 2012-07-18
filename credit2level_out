@@ -1,0 +1,39 @@
+//
+// NAME: credit2level.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/18/2012
+// DESCRIPTION: Determines grade level based on credits completed 
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int credits;
+    
+    cout << "Number of credits completed: "; cin >> credits;
+    
+    cout << "Grade Level: ";
+    if (credits < 32)
+        cout << "Freshman" << endl;
+    else
+        if (credits <= 63)
+            cout << "Sophmore" << endl;
+    else    
+        if (credits <= 95)
+            cout << "Junior" << endl;
+    else
+        cout << "Senior" << endl;
+
+    return 0;
+}
+
+OUTPUT:
+
+Number of credits completed: 31
+Grade Level: Freshman
+
+Number of credits completed: 100004
+Grade Level: Senior

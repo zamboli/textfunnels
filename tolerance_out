@@ -1,0 +1,43 @@
+//
+// NAME: tolerance.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/18/2012
+// DESCRIPTION: 
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    double tolerance;
+
+    cout << "Component tolerance: "; cin >> tolerance;
+
+    cout << "Specification Status: ";
+    if ( tolerance < 0.1)
+        cout << "Space grade" << endl;
+    else if ( tolerance  < 1 )
+        cout << "Military grade" << endl;
+    else if ( tolerance  < 10 )
+        cout << "Commercial grade" << endl;
+    else
+        cout << "Toy grade" << endl;
+
+    return 0;
+}
+
+OUTPUT:
+
+Component tolerance: .2
+Specification Status: Military grade
+
+Component tolerance: .01
+Specification Status: Space grade
+
+Component tolerance: 98
+Specification Status: Toy grade
+
+Component tolerance: 9
+Specification Status: Commercial grade

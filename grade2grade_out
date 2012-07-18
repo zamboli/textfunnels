@@ -1,0 +1,41 @@
+//
+// NAME: grade2grade.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/18/2012
+// DESCRIPTION: Converts numerical grade to letter grade
+//
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int grade;
+
+    cout << "Enter numerical grade: "; cin >> grade;
+
+    cout << "Letter grade: ";
+
+    if (grade < 60)
+        cout << "F" << endl;
+    else if (grade < 70)
+        cout << "D" << endl;
+    else if (grade < 80)
+        cout << "C" << endl;
+    else if (grade < 90)
+        cout << "B" << endl;
+    else
+        cout << "A" << endl;
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter numerical grade: 70
+Letter grade: C
+
+Enter numerical grade: 2
+Letter grade: F
+
+Enter numerical grade: 90
+Letter grade: A
