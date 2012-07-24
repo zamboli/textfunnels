@@ -1,0 +1,66 @@
+//
+// NAME: quadratic_roots.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/23/2012
+// DESCRIPTION: Find the roots of a quadratic equation
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    double a, b, c, disc, root1, root2;
+
+    cout << "Calculate the roots of a\
+             quadratic equation of the form\n\n\
+             ax^2 + bx + c = 0\n\n";
+    
+    cout << "Enter values for a, b, and c: ";
+    cin >> a >> b >> c;
+
+    if ( a == 0.0 && b == 0.0 )     //if equation is 0 + 0 + c 
+        cout << "This equation is degenerate and has no roots.\n";
+    
+    else if ( a == 0.0 )    //equation is 0 + bx + c = 0
+        cout << "This equation has a single root x = " 
+             << -c/b << endl;
+    
+    else { //disc is valid
+        
+        //calculate discriminate
+        disc = pow(b,2.0) - 4 * a * c;
+        
+        if (disc > 0.0) 
+        {
+            disc = sqrt(disc);
+            root1 = (-b + disc) / (2 * a);
+            root2 = (-b - disc) / (2 * a);
+            cout << "The two roots are "
+                << root1 << " and " << root2 << endl;
+        }
+       /***************HOMEWORK******************/ 
+        else if (disc < 0.0)
+        {
+            //"factor" sqrt(-1), or i, out of disk
+            disc = -disc;
+            
+            cout << "Both roots are imaginary and they are\n\n";
+            cout << (-b/(2 * a)) << " +- " << sqrt(disc)/(2 * a) << " i" <<  endl << endl;
+        }
+        else    //disc == 0
+            cout << "Both roots are equal to " << -b / (2 * a) << endl;
+    } // end of else for 
+    
+    return 0;
+}
+OUTPUT:
+Calculate the roots of a quadratic
+ equation of the form: ax^2 + bx + c = 0
+
+Enter values for a, b, and c: 1 2 3
+Both roots are imaginary and they are
+
+-1 +- 1.41421 i
+
