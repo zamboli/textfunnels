@@ -1,0 +1,53 @@
+//
+// NAME: numsquarecube.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/25/2012
+// DESCRIPTION: 
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+void table(int);
+
+int main()
+{
+    int max;
+
+    cout << "How many iterations would you like to iterate? ";
+    cin >> max;
+    table(max);
+
+    return 0;
+}
+
+void table(int maxNum) {
+    cout << "NUMBER         SQUARE           CUBE\n"
+         << "------         ------           ----\n";
+
+    for (int num = 1; num <=maxNum; num++) {
+        cout << setw(5) << num << "     "
+             << setw(10) << pow(num,2) << "      "
+             << setw(10) << pow(num,3) << endl;
+    }
+    return;
+}
+
+OUTPUT:
+How many iterations would you like to iterate? 12
+NUMBER         SQUARE           CUBE
+------         ------           ----
+    1              1               1
+    2              4               8
+    3              9              27
+    4             16              64
+    5             25             125
+    6             36             216
+    7             49             343
+    8             64             512
+    9             81             729
+   10            100            1000
+   11            121            1331
+   12            144            1728
+

@@ -1,0 +1,39 @@
+//
+// NAME: findAbs.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/25/2012
+// DESCRIPTION: A program that employs a function which 
+// evaluates the absolute value of a term
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+void findAbs(double); //absolute function prototype
+
+int main()
+{
+    double num;
+    
+    cout << "Enter a number to evaluate its absolute value: ";
+    cin >> num;
+    
+    //call function
+    findAbs(num);
+    
+    return 0;
+}
+//define findAbs
+void findAbs(double abs) {
+    if (abs < 0)
+        abs = -abs;
+    cout << "The absolute value is " << abs << endl;
+
+    return;
+}
+
+OUTPUT:
+Enter a number to evaluate its absolute value: -12.474
+The absolute value is 12.474
+

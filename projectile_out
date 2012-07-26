@@ -1,0 +1,66 @@
+//
+// NAME: projectile.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/24/2012
+// DESCRIPTION: Calculate a table of x and y coordinates of a 
+// projectile at a given speed in 1/2 second increments
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+double d2r(double);//degrees to radians function
+
+int main()
+{
+    double x, y=1, velocity, angle;
+
+    cout << "Enter initial velocity of projectile(ft/sec): "; cin >> velocity;
+    cout << "Enter angle of projectile(degrees): "; cin >> angle;
+    
+    //table head
+    cout << setw(10) << left << "Time" << setw(10) <<"X" << setw(10) << "Y" << endl;
+
+    for (double time=0.;time<=10;time+=.5) {
+        x = velocity * time * cos(d2r(angle));
+        y = velocity * time * sin(d2r(angle));
+        cout<< setw(10) << left << fixed << setprecision(1) << time 
+            << setw(10) <<x << setw(10) << y << endl;
+    }
+
+    return 0;
+}
+
+double d2r(double deg) 
+{
+    double pi = 3.14159;
+    double radians = pi * deg / 180;
+    return radians;
+}
+
+OUTPUT: 
+Enter initial velocity of projectile(ft/sec): 500
+Enter angle of projectile(degrees): 22.8
+Time      X         Y         
+0.0       0.0       0.0       
+0.5       230.5     96.9      
+1.0       460.9     193.8     
+1.5       691.4     290.6     
+2.0       921.9     387.5     
+2.5       1152.3    484.4     
+3.0       1382.8    581.3     
+3.5       1613.3    678.2     
+4.0       1843.7    775.0     
+4.5       2074.2    871.9     
+5.0       2304.7    968.8     
+5.5       2535.1    1065.7    
+6.0       2765.6    1162.5    
+6.5       2996.1    1259.4    
+7.0       3226.5    1356.3    
+7.5       3457.0    1453.2    
+8.0       3687.5    1550.1    
+8.5       3917.9    1646.9    
+9.0       4148.4    1743.8    
+9.5       4378.9    1840.7    
+10.0      4609.3    1937.6  
