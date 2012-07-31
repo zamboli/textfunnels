@@ -1,0 +1,45 @@
+//
+// NAME: integer_values.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/30/2012
+// DESCRIPTION: Uses a function template to calculate the integer
+// value of the input
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+//template definition
+    template <class T>
+    void whole(T var) {
+        cout << "Integer value: " << int(var) << endl;
+    }
+
+//main program
+int main()
+{
+    int num;
+    double fp_num;
+    char c;
+
+    cout << "Enter an integer: "; cin >> num;
+    whole(num);
+
+    cout << "Enter a double-precision number: "; cin >> fp_num;
+    whole(fp_num);
+
+    cout << "Enter a character: "; cin >> c;
+    whole(c);
+
+    return 0;
+}
+
+OUTPUT:
+Enter an integer: 3
+Integer value: 3
+Enter a double-precision number: 2345.23
+Integer value: 2345
+Enter a character: g
+Integer value: 103
+

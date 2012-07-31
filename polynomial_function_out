@@ -1,0 +1,45 @@
+//
+// NAME: polynomial_function.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/30/2012
+// DESCRIPTION: 6.2 #8  Uses a function to calculate the value of
+// the second-degree polynomial ax^2+bx+c=0
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+//function prototype
+double poly(double,double,double,double);
+
+int main()
+{
+    cout << "Solve for the equation ax^2 + bx + c" << endl
+         << "Enter parameters for a, b, c, and x: ";
+
+    double a,b,c,x;
+
+    cin >> a >> b >> c >> x;
+    
+    cout << endl << poly(a,b,c,x) << endl;
+
+    return 0;
+}
+//function definition
+double poly(double a, double b, double c, double x) {
+    double y;
+    //evaluate equation
+    y = (a * pow(x,2)) + (b * x) + c;
+    //output equation with values subbed in
+    cout << a << " * " << x << "^2 + " << b << " * "
+         << x << " + " << c << " = ";
+    //return value
+    return y;
+}
+
+OUTPUT:
+Solve for the equation ax^2 + bx + c
+Enter parameters for a, b, c, and x: 1 2 3 4
+1 * 4^2 + 2 * 4 + 3 = 
+27

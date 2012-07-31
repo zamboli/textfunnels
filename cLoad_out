@@ -1,0 +1,45 @@
+//
+// NAME: cLoad.cc
+// AUTHOR: Ben Lazan
+// DATE: 07/30/2012
+// DESCRIPTION: Uses a function to determine the buckling load
+// of a column 
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+//prototype
+double cLoad(double,double,double,double);
+
+int main()
+{
+    double E, A, L, r, Pcr;
+    cout << "Enter modulus of elasticity: "; cin >> E;
+    cout << "Enter the cross-sectional area: "; cin >> A;
+    cout << "Enter the length of the column: "; cin >> L;
+    cout << "Enter the column's radius of gyration: "; cin >> r;
+
+    Pcr = cLoad(E,A,L,r);
+    cout << "Critical buckling load of the column is: "
+         << Pcr << " kips" << endl;
+
+    return 0;
+}
+//definition
+double cLoad(double E,double A,double L, double r) {
+    
+    double Pcr, PI = 3.14159;
+    
+    Pcr = (pow(PI,2) * E * A) / pow((L / r),2);
+
+    return Pcr;
+}
+
+OUTPUT:
+Enter modulus of elasticity: 10
+Enter the cross-sectional area: 5
+Enter the length of the columb: 10
+Enter the column's radius of gyration: 23
+Critical buckling load of the column is: 2610.51 kips
