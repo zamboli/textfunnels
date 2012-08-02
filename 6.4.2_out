@@ -1,0 +1,59 @@
+//
+// NAME: 6.4.2.cc
+// AUTHOR: Ben Lazan
+// DATE: 08/ 1/2012
+// DESCRIPTION: accepts coordinates of two points and calculates 
+// their distance from the origin and from each other
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+double pt2orig(double,double); //point to origin prototype
+double pt2pt(double,double,double,double); //point to point prototype
+
+int main()
+{
+    double x1,y1,x2,y2,d1,d2,p2p;
+    
+    cout << setiosflags(ios::fixed) << setprecision(2);
+
+    cout << "Enter X and Y coordinates of first point: ";
+    cin >> x1 >> y1;
+    
+    cout << "Enter X and Y coordinates of second point: ";
+    cin >> x2 >> y2;
+
+    //save coordinate distances from origin
+    d1 = pt2orig(x1,y1);
+    d2 = pt2orig(x2,y2);
+    //save coordinate distance from each other
+    p2p = pt2pt(x1,y1,x2,y2);
+
+    cout << "(" << x1 << "," << y1 << ") is " << d1 << " from origin." << endl
+         << "(" << x2 << "," << y2 << ") is " << d2 << " from origin." << endl << endl
+         << "The distance between the two coordinates is " << p2p << endl;
+    
+
+    return 0;
+}
+
+double pt2orig(double x, double y) {
+    double d;
+    d = sqrt(pow(x,2)+pow(y,2));
+    return d;
+}
+
+double pt2pt(double x1,double y1,double x2,double y2) {
+    double d;
+    d = sqrt(pow(x2-x1,2)+pow(y1-y2,2));
+    return d;
+}
+OUTPUT:
+Enter X and Y coordinates of first point: 1 4
+Enter X and Y coordinates of second point: 4 5
+(1.00,4.00) is 4.12 from origin.
+(4.00,5.00) is 6.40 from origin.
+
+The distance between the two coordinates is 3.16
