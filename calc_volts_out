@@ -1,0 +1,59 @@
+//
+// NAME: calc_volts.cc
+// AUTHOR: Ben Lazan
+// DATE: 08/ 5/2012
+// DESCRIPTION: 
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+const int SIZE = 10; //size of arrays
+double calc_volts(double, double); // prototype
+
+int main()
+{
+    double volts[SIZE] = {0},
+        current[SIZE] = {10.62, 14.89, 13.21, 16.55, 18.62,
+                          9.47,  6.58, 18.32, 12.15,  3.98},
+
+     resistance[SIZE] = { 4.00,  8.50,  6.00,  7.35,  9.00,
+                         15.30,  3.00,  5.40,  2.90,  4.80};
+     //loop through each value to assign volts
+     for (int i = 0; i < SIZE; i++)
+         volts[i] = calc_volts(current[i], resistance[i]);
+
+
+    //output
+    cout << setiosflags(ios::left | ios::fixed) << setprecision(2);
+
+    cout << setw(10) << "Curent " << setw(10) << "Resistance"
+         << setw(10) << "Volts" << endl;
+    
+    for (int i = 0; i < SIZE; i++) 
+        cout << setw(10) << current[i] << setw(10) << resistance[i]
+             << setw(10) << volts[i] << endl;
+
+    return 0;
+}
+
+double calc_volts(double current, double resistance)
+{
+    double volts; 
+    volts = current * resistance;
+
+    return volts;
+}
+OUTPUT:
+Curent    ResistanceVolts     
+10.62     4.00      42.48     
+14.89     8.50      126.56    
+13.21     6.00      79.26     
+16.55     7.35      121.64    
+18.62     9.00      167.58    
+9.47      15.30     144.89    
+6.58      3.00      19.74     
+18.32     5.40      98.93     
+12.15     2.90      35.23     
+3.98      4.80      19.10     

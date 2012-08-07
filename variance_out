@@ -1,0 +1,48 @@
+//
+// NAME: variance.cc
+// AUTHOR: Ben Lazan
+// DATE: 08/ 5/2012
+// DESCRIPTION: Calculates the average and variance of an
+// array of values and displays them 
+//
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+
+const int SIZE = 14;
+double calcavg(int [SIZE]);
+double variance(int [SIZE]);
+
+int main()
+{
+    int num[SIZE] = {89, 95, 72, 83, 99,
+                     54, 86, 75, 92, 73,
+                     79, 75, 82, 73};
+
+    cout << "Average of array: " << calcavg(num) << endl;
+    cout << "Variance of array: " << variance(num) << endl;
+
+    return 0;
+}
+
+double calcavg(int num[SIZE])
+{
+    int sum = 0;
+    for (int i = 0; i < SIZE; i++)
+        sum = sum + num[i];  //aggregate sum of all values
+
+    return sum / SIZE; //return average
+}
+
+double variance(int num[SIZE])
+{
+    double varsum = 0;
+    for (int i = 0; i < SIZE; i++)
+        varsum = varsum + pow( num[i]-calcavg(num) ,2);
+
+    return varsum / SIZE;
+}
+OUTPUT:
+Average of array: 80
+Variance of array: 124.929
