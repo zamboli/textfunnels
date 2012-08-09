@@ -1,0 +1,35 @@
+Enter commands. Type "help" for help.
+: help
+help:  print this
+new:   open new file
+show:  show current text
+write: write a string
+add:   add text to the string
+print: print string to file
+quit:  save and exit program
+: new
+Enter filename, don't overwrite an existing file! :textfile.txt
+: write
+Enter word: Hi
+: add
+Add word: I
+: add
+Add word: like
+: add
+Add word: tacos
+: show
+Hi I like tacos
+: print
+: show
+
+: write
+Enter word: Tacolicious!
+: show
+Tacolicious!
+: print
+: quit
+
+contents of textfile.txt:
+
+Hi I like tacos
+Tacolicious!
